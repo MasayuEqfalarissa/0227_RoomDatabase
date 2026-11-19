@@ -13,4 +13,7 @@ interface SiswaDao {
 
     @Query("SELECT * from tblsiswa ORDER BY nama ASC")
     fun getAllSiswa(): Flow<List<Siswa>>
+
+    @Query(value = "SELECT * from tblsiswa WHERE id = :id")
+    fun getSiswa(id: Int): Flow<Siswa>
 }
