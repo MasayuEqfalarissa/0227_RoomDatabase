@@ -33,9 +33,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.praktikum7.room.Siswa
-import com.example.praktikum7.uicontroller.DestinasiNavigasi
+import com.example.praktikum7.view.uicontroller.DestinasiNavigasi
 import com.example.praktikum7.R
-import com.example.praktikum7.uicontroller.SiswaTopAppBar
+import com.example.praktikum7.view.uicontroller.SiswaTopAppBar
 import com.example.praktikum7.viewmodel.HomeViewModel
 import com.example.praktikum7.viewmodel.PenyediaViewModel
 
@@ -114,6 +114,8 @@ fun BodyHome(
 @Composable
 fun ListSiswa(
     itemSiswa: List<Siswa>,
+    //edit 1: tambahkan parameter onSiswaClick
+    onSiswaClick: (Siswa) -> Unit,
     modifier: Modifier = Modifier
 ) {
     LazyColumn(modifier = modifier) {
