@@ -3,6 +3,7 @@ Halaman kedua <img width="375" height="446" alt="Screenshot 2026-11-12 211559" s
 Halaman ketiga <img width="248" height="427" alt="Screenshot 2026-11-12 211733" src="https://github.com/user-attachments/assets/1af855c2-1f1c-4629-9048-4bbabb98ca85" />
 
 
+<img width="223" height="452" alt="Screenshot 2026-11-19 193201" src="https://github.com/user-attachments/assets/5010d4cf-f68a-42a3-aae6-8e4436cac209" />
 <img width="226" height="468" alt="Screenshot 2026-11-19 200525" src="https://github.com/user-attachments/assets/d9db8e7f-8aac-4bf8-a4ad-449f42b2cbb4" />
 <img width="210" height="444" alt="Screenshot 2026-11-19 200318" src="https://github.com/user-attachments/assets/ad688b24-26b1-4713-b9f4-eace75ba8f17" />
 <img width="230" height="457" alt="image" src="https://github.com/user-attachments/assets/70c7f841-a54b-40fa-9b36-e8eb9cef76ac" />
