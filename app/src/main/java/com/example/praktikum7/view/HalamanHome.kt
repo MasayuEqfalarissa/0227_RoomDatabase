@@ -1,5 +1,6 @@
 package com.example.praktikum7.view
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -35,19 +36,17 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.praktikum7.room.Siswa
 import com.example.praktikum7.view.uicontroller.DestinasiNavigasi
 import com.example.praktikum7.R
+import com.example.praktikum7.view.uicontroller.DestinasiHome
 import com.example.praktikum7.view.uicontroller.SiswaTopAppBar
 import com.example.praktikum7.viewmodel.HomeViewModel
 import com.example.praktikum7.viewmodel.PenyediaViewModel
-
-object DestinasiHome : DestinasiNavigasi {
-    override val route = "home"
-    override val titleRes = R.string.app_name
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     navigateToItemEntry: () -> Unit,
+    //edit 5
+    navigateToItemUpdate: (Int) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ) {
@@ -78,6 +77,8 @@ fun HomeScreen(
         val uiStateSiswa by viewModel.homeUiState.collectAsState()
         BodyHome(
             itemSiswa = uiStateSiswa.listSiswa,
+            //edit 6
+            onSiswaClick = navigateToItemUpdate,
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize()
@@ -89,7 +90,7 @@ fun HomeScreen(
 fun BodyHome(
     itemSiswa: List<Siswa>,
     //edit 3: parameter onSiswaCllick
-    onSiswaClick: (Siswa) -> Unit,
+    onSiswaClick: (Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -105,6 +106,8 @@ fun BodyHome(
         } else {
             ListSiswa(
                 itemSiswa = itemSiswa,
+                //edit 4
+                onSiswaClick = {onSiswaClick(it.id)},
                 modifier = Modifier.padding(
                     horizontal = dimensionResource(id = R.dimen.padding_small)
                 )
@@ -128,9 +131,10 @@ fun ListSiswa(
                     dimensionResource(id = R.dimen.padding_small)
 
                     //edit 2: tambahkan modifikasi clickable
-                    .clickable { onSiswaClick(person) }
+
 
                 )
+                    .clickable { onSiswaClick(person) }
             )
         }
     }
