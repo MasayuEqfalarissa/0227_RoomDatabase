@@ -1,0 +1,10 @@
+package com.example.praktikum7.view.uicontroller
+
+import com.example.praktikum7.R
+
+object DestinasiDetailSiswa : DestinasiNavigasi {
+    override val route = "detail_siswa"
+    override val titleRes = "Detail Siswa"
+    const val itemIdArg = "idSiswa"
+    val routeWithArgs = "$route/{$itemIdArg}"
+}
